@@ -1,0 +1,35 @@
+﻿@model Stock.Models.ProduitModel
+
+@{
+    ViewData["Title"] = "Ajouter un produit";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Nom">Nom du produit</label>
+        <input type="text" class="form-control" id="Nom" name="Nom" maxlength="10" value="@Model.Nom" />
+    </div>
+
+    <div class="form-group">
+        <label for="Marque">Marque</label>
+        <input type="text" class="form-control" id="Marque" name="Marque" maxlength="100" value="@Model.Marque" />
+    </div>
+
+    <div class="form-group">
+        <label for="GTIN">GTIN</label>
+        <input type="text" class="form-control" id="GTIN" name="GTIN" maxlength="10" value="@Model.GTIN" />
+    </div>
+
+    <div class="form-group">
+        <label for="Prix">Prix</label>
+        <input type="text" class="form-control" id="Prix" name="Prix" required maxlength="100" value="@Model.Prix" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter le produit</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

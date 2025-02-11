@@ -1,0 +1,45 @@
+﻿@model Stock.Models.UserModel
+
+@{
+    ViewData["Title"] = "Inscription";
+}
+
+<h2 class="text-center">Inscription</h2>
+
+<div class="container">
+    <form asp-action="CreateUser" method="post">
+        <div class="mb-3">
+            <label asp-for="Nom" class="form-label">Nom</label>
+            <input asp-for="Nom" class="form-control" placeholder="Entrez votre nom">
+            <span asp-validation-for="Nom" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Prenom" class="form-label">Prénom</label>
+            <input asp-for="Prenom" class="form-control" placeholder="Entrez votre prénom">
+            <span asp-validation-for="Prenom" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Mail" class="form-label">Email</label>
+            <input asp-for="Mail" type="email" class="form-control" placeholder="Entrez votre email">
+            <span asp-validation-for="Mail" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="MotDePasse" class="form-label">Mot de passe</label>
+            <input asp-for="MotDePasse" type="password" class="form-control" placeholder="Entrez votre mot de passe">
+            <span asp-validation-for="MotDePasse" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a asp-action="Login">Déjà un compte ? Connectez-vous ici</a>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

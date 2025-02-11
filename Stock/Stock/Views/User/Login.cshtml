@@ -1,0 +1,40 @@
+﻿@model Stock.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Connexion";
+}
+
+<h2 class="text-center">Connexion</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    </div>
+}
+
+<div class="container">
+    <form asp-action="Login" method="post">
+        <div class="mb-3">
+            <label asp-for="Mail" class="form-label">Email</label>
+            <input asp-for="Mail" type="email" class="form-control" placeholder="Entrez votre email">
+            <span asp-validation-for="Mail" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="MotDePasse" class="form-label">Mot de passe</label>
+            <input asp-for="MotDePasse" type="password" class="form-control" placeholder="Entrez votre mot de passe">
+            <span asp-validation-for="MotDePasse" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a asp-action="User">Pas encore de compte ? Inscrivez-vous ici</a>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Tableau de Bord";
+}
+
+<h2 class="text-center">Bienvenue dans votre tableau de bord</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger text-center">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-info text-center">
+        @TempData["InfoMessage"]
+    </div>
+}
